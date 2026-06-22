@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>1xbet · 平台速览与场景导览</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #fafcff;
+      color: #1e2633;
+      line-height: 1.65;
+    }
+
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.2rem 1.5rem 4rem;
+    }
+
+    /* 顶部导航 —— 极简线框 */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0 1.2rem;
+      border-bottom: 1px solid #e7ebf1;
+      margin-bottom: 3rem;
+    }
+
+    .site-id {
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: #2a3443;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5b70;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: #1b2838;
+    }
+
+    /* Hero 区 */
+    .hero {
+      margin-bottom: 3.6rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: #161f2c;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #40505f;
+      max-width: 600px;
+    }
+
+    .hero p a {
+      color: #1b4d7a;
+      text-decoration: none;
+      border-bottom: 1px solid #b8cbde;
+      transition: border-color 0.2s;
+    }
+
+    .hero p a:hover {
+      border-bottom-color: #1b4d7a;
+    }
+
+    /* 核心介绍 */
+    .intro-card {
+      background: #ffffff;
+      padding: 1.8rem 2rem;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2.8rem;
+    }
+
+    .intro-card h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.9rem;
+      color: #1b2a3b;
+    }
+
+    .intro-card p {
+      color: #374756;
+      margin-bottom: 0.8rem;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 三个场景模块 —— 卡片网格 */
+    .scenes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .scene-item {
+      background: #ffffff;
+      padding: 1.6rem 1.2rem 1.4rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid #eef2f7;
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-item:hover {
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    .scene-item h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #1d2a39;
+      letter-spacing: -0.01em;
+    }
+
+    .scene-item p {
+      font-size: 0.93rem;
+      color: #4a5a6b;
+      line-height: 1.55;
+    }
+
+    /* 常见说明 (FAQ 摘要) */
+    .faq-section {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.8rem 2rem;
+      border: 1px solid #e7ecf3;
+      margin-bottom: 2.8rem;
+    }
+
+    .faq-section h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1b2a3b;
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #edf2f8;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      font-size: 0.98rem;
+      color: #203042;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-answer {
+      font-size: 0.93rem;
+      color: #4c5d6e;
+      line-height: 1.55;
+    }
+
+    .faq-answer a {
+      color: #1b4d7a;
+      text-decoration: none;
+      border-bottom: 1px solid #cbd6e2;
+    }
+
+    .faq-answer a:hover {
+      border-bottom-color: #1b4d7a;
+    }
+
+    /* 页脚 */
+    .footer-note {
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e3e9f0;
+      font-size: 0.85rem;
+      color: #66788b;
+    }
+
+    /* 响应式 */
+    @media (max-width: 680px) {
+      .page-wrap {
+        padding: 1.6rem 1.2rem 3rem;
+      }
+
+      .top-nav {
+        flex-wrap: wrap;
+        gap: 0.6rem 0;
+      }
+
+      .nav-links {
+        gap: 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .scenes {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .intro-card,
+      .faq-section {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+      <span class="site-id">速览 · 1xbet</span>
+      <div class="nav-links">
+        <a href="#intro">介绍</a>
+        <a href="#scenes">场景</a>
+        <a href="#faq">说明</a>
+      </div>
+    </nav>
+
+    <!-- Hero 区 -->
+    <div class="hero">
+      <h1>了解平台用途<br>从三个视角切入</h1>
+      <p>
+        <a href="https://cns-ssl-1xbet.com">1xbet</a> 是一个提供在线数字服务的平台，用户可通过其界面参与多种类型的娱乐互动。以下从平台定位、常用场景、常见疑问三个方面提供客观介绍，帮助你快速判断此网站是否符合自身需求。
+      </p>
+    </div>
+
+    <!-- 核心介绍 -->
+    <div class="intro-card" id="intro">
+      <h2>平台定位速读</h2>
+      <p>
+        该平台围绕「综合型线上服务」构建，涵盖体育赛事数据、电子竞技、虚拟体育以及实时娱乐项目。所有功能均集成于同一账户体系下，用户注册后即可浏览不同模块。界面支持多语言切换，同时提供网页端与移动端适配版本。
+      </p>
+      <p>
+        在访问前，建议用户了解所在地区关于在线服务的相关法规，并确认自身年龄是否符合平台规定。平台本身不提供任何形式的投资或收益承诺，所有参与均应建立在理性判断基础上。
+      </p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes" id="scenes">
+      <div class="scene-item">
+        <h3>场景一 · 赛事阅览</h3>
+        <p>用户可查看来自全球多个联赛的实时比分、统计数据及赛程安排。结合历史数据与动态信息，辅助观察赛事趋势。</p>
+      </div>
+      <div class="scene-item">
+        <h3>场景二 · 虚拟项目体验</h3>
+        <p>平台内置多种基于算法的虚拟竞技项目，如赛车、赛马、足球模拟等。每场结果由系统独立生成，适合希望快速体验回合制内容的用户。</p>
+      </div>
+      <div class="scene-item">
+        <h3>场景三 · 电子竞技模块</h3>
+        <p>覆盖 CS2、Dota 2、英雄联盟、Valorant 等主流电竞赛事。提供赛事直播流、实时赔率变化以及战队数据参考，方便玩家跟踪比赛进程。</p>
+      </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-section" id="faq">
+      <h2>常见说明摘要</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">通过哪个网站可以访问平台？</div>
+        <div class="faq-answer">
+          网站主域为 <a href="https://cns-ssl-1xbet.com">1xbet</a>，用户可直接在浏览器地址栏输入该网址进入。建议使用最新版浏览器，并保持网络环境稳定。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">是否需要下载额外软件？</div>
+        <div class="faq-answer">
+          网页端无需下载即可使用全部核心功能。平台同时提供官方移动应用（Android / iOS），用户可根据设备选择安装，应用内功能与网页版基本一致。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">提供哪些语言与支付方式？</div>
+        <div class="faq-answer">
+          界面支持包括中文、英文、俄语、西班牙语在内的数十种语言。支付渠道因地区而异，通常包括银行转账、电子钱包及加密货币选项。具体请以账户后台显示为准。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">如何确认账户安全？</div>
+        <div class="faq-answer">
+          平台采用 SSL 加密传输，并建议用户开启双因素认证（2FA）。切勿向任何人透露账户密码或验证码，官方客服不会主动索要敏感信息。
+        </div>
+      </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+      <p>本页面为独立介绍用途，所有信息均基于公开可查的内容整理。访问 <a href="https://cns-ssl-1xbet.com">1xbet</a> 前请自行确认当地法律法规。请合理分配时间，理性参与。</p>
+    </div>
+
+  </div>
+</body>
+</html>
